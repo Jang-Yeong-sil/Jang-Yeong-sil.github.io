@@ -555,8 +555,10 @@ ul {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .team-card {
@@ -853,10 +855,6 @@ ul {
 
   .vision-grid {
     grid-template-columns: 1fr;
-  }
-
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 
   .projects-grid {
