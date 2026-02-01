@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <!-- 그라디언트 정의 -->
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C9A227;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#E8D48B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B7355;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="goldGradientLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B6914;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#C9A227;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6B4E0A;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6B4E0A;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#C9A227;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#E8D48B;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#C9A227;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6B4E0A;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="waterDropLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0288D1;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#01579B;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 미세한 그림자 효과 -->
+    <filter id="softShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+    
+    <filter id="glowLight">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 흰색 배경 -->
+  <rect width="400" height="400" fill="#FFFFFF"/>
+  
+  <!-- 외곽 테두리 - 이중선 -->
+  <rect x="8" y="8" width="384" height="384" fill="none" stroke="url(#borderGradient)" stroke-width="3" rx="8" ry="8"/>
+  <rect x="18" y="18" width="364" height="364" fill="none" stroke="#C9A227" stroke-width="1" rx="4" ry="4" opacity="0.5"/>
+  
+  <!-- 모서리 장식 - 천문학적 별 모티브 -->
+  <!-- 좌상단 -->
+  <circle cx="28" cy="28" r="4" fill="#C9A227" opacity="0.7"/>
+  <circle cx="28" cy="28" r="2" fill="#E8D48B"/>
+  <!-- 우상단 -->
+  <circle cx="372" cy="28" r="4" fill="#C9A227" opacity="0.7"/>
+  <circle cx="372" cy="28" r="2" fill="#E8D48B"/>
+  <!-- 좌하단 -->
+  <circle cx="28" cy="372" r="4" fill="#C9A227" opacity="0.7"/>
+  <circle cx="28" cy="372" r="2" fill="#E8D48B"/>
+  <!-- 우하단 -->
+  <circle cx="372" cy="372" r="4" fill="#C9A227" opacity="0.7"/>
+  <circle cx="372" cy="372" r="2" fill="#E8D48B"/>
+  
+  <!-- 혼천의 추상화 - 동심원들 -->
+  <g transform="translate(200, 175)" filter="url(#softShadow)">
+    <!-- 가장 바깥 원 -->
+    <circle cx="0" cy="0" r="120" fill="none" stroke="#5D4E37" stroke-width="1.5" opacity="0.25"/>
+    <circle cx="0" cy="0" r="120" fill="none" stroke="url(#goldGradient)" stroke-width="1.5" opacity="0.4"/>
+    
+    <!-- 기울어진 궤도 1 -->
+    <ellipse cx="0" cy="0" rx="100" ry="40" fill="none" stroke="url(#goldGradientLight)" stroke-width="2.5" transform="rotate(-25)" opacity="0.85"/>
+    
+    <!-- 기울어진 궤도 2 -->
+    <ellipse cx="0" cy="0" rx="82" ry="32" fill="none" stroke="url(#goldGradientLight)" stroke-width="2" transform="rotate(35)" opacity="0.75"/>
+    
+    <!-- 기울어진 궤도 3 -->
+    <ellipse cx="0" cy="0" rx="64" ry="25" fill="none" stroke="url(#goldGradientLight)" stroke-width="1.8" transform="rotate(-60)" opacity="0.65"/>
+    
+    <!-- 중심 원 - 해/별 -->
+    <circle cx="0" cy="0" r="22" fill="url(#goldGradientLight)" filter="url(#glowLight)"/>
+    <circle cx="0" cy="0" r="16" fill="#C9A227" opacity="0.5"/>
+    
+    <!-- 별들 (천문학적 요소) -->
+    <circle cx="88" cy="-28" r="3.5" fill="#8B6914" filter="url(#glowLight)"/>
+    <circle cx="-72" cy="45" r="3" fill="#8B6914" filter="url(#glowLight)"/>
+    <circle cx="36" cy="78" r="2.5" fill="#A67C00"/>
+    <circle cx="-55" cy="-65" r="2.5" fill="#A67C00"/>
+    <circle cx="100" cy="18" r="2" fill="#6B4E0A"/>
+  </g>
+  
+  <!-- 물방울 (자격루/측우기 추상화) -->
+  <g transform="translate(200, 318)" filter="url(#softShadow)">
+    <!-- 물방울 형태 -->
+    <path d="M0,-40 
+             Q18,-22 18,4 
+             Q18,27 0,36 
+             Q-18,27 -18,4 
+             Q-18,-22 0,-40 Z" 
+          fill="url(#waterDropLight)" 
+          opacity="0.9"/>
+    
+    <!-- 물방울 내부 하이라이트 -->
+    <ellipse cx="-4" cy="-13" rx="5" ry="9" fill="white" opacity="0.5"/>
+    
+    <!-- 물결 파장 - 측정/과학적 정밀함 -->
+    <path d="M-45,40 Q-22,31 0,40 Q22,49 45,40" fill="none" stroke="#0277BD" stroke-width="2" opacity="0.6"/>
+    <path d="M-36,46 Q-18,40 0,46 Q18,52 36,46" fill="none" stroke="#0288D1" stroke-width="1.5" opacity="0.4"/>
+  </g>
+  
+  <!-- 시간의 흐름을 나타내는 곡선 (연결선) -->
+  <path d="M200,200 
+           Q225,240 200,278" 
+        fill="none" 
+        stroke="url(#goldGradientLight)" 
+        stroke-width="2.5" 
+        opacity="0.7"
+        stroke-dasharray="4,4"/>
+  
+  <!-- 눈금 표시 (측정 도구의 정밀함) -->
+  <g transform="translate(200, 175)" opacity="0.4">
+    <line x1="0" y1="-125" x2="0" y2="-132" stroke="#C9A227" stroke-width="1.5"/>
+    <line x1="125" y1="0" x2="132" y2="0" stroke="#C9A227" stroke-width="1.5"/>
+    <line x1="-125" y1="0" x2="-132" y2="0" stroke="#C9A227" stroke-width="1.5"/>
+    
+    <!-- 대각선 눈금 -->
+    <line x1="88" y1="-88" x2="93" y2="-93" stroke="#C9A227" stroke-width="1"/>
+    <line x1="88" y1="88" x2="93" y2="93" stroke="#C9A227" stroke-width="1"/>
+    <line x1="-88" y1="88" x2="-93" y2="93" stroke="#C9A227" stroke-width="1"/>
+    <line x1="-88" y1="-88" x2="-93" y2="-93" stroke="#C9A227" stroke-width="1"/>
+  </g>
+  
+</svg>
